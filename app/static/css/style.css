@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0F0C2D, #4829B2);
+    animation: gradientAnimation 10s linear infinite;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-main {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 70%;
+    height: auto;
+    min-height: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px 40px #00000056;
+
+    animation: entering 0.7s ease-in-out;
+}
+
+.main > h1 {
+    margin: 0;
+    color: #00ff88;
+    font-weight: 800;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+.input {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 4rem;
+    width: 100%;
+    border: 2px dashed #00ff88;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: .7rem;
+    align-items: center;
+}
+
+.input > input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+}
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes entering {
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes girarInfinito {
+    0% {
+        transform: translate(0px , 0px);
+    }
+    25% {
+        transform: translate(-5px , -16px);
+    }
+    50% {
+        transform: translate(-10px , 0px);
+    }
+    75% {
+        transform: translate(-5px , 16px);
+    }
+    100% {
+        transform: translateY(0px, 0px);
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .container-main {
+        width: 100%;
+        margin-top: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 325px){
+    .main > h1 {
+        font-weight: 800;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 265px){
+    .main > h1 {
+        font-weight: 500;
+        font-size: 1.5em;
+    }
+
+    .btn {
+        font-weight: 800;
+        letter-spacing: 3px;
+        font-size: .5rem;
+    }
+
+    .main {
+        padding: 30px 10px;
+    }
+}
+
+@media (max-width: 180px){
+    .main{
+        width: 95%;
+    }
+}
